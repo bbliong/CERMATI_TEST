@@ -1,0 +1,159 @@
+.panel {
+    &__notification {
+
+        &__show {
+            top: 0px  !important;
+        }
+
+        &__hide {
+            top: -200px !important;
+        }
+
+        position: fixed;
+        width: 100%;
+        padding: 10px;
+        flex-wrap: wrap;
+        background-color: $white;
+        z-index: 10;
+        transition: all 400ms ease-in-out;
+
+        >p {
+            width: 100%;
+            padding: 0px 4px;
+            color: #2A3531;
+            font-size: 12px;
+            margin: 0.625rem 0;
+            font-weight: 400;
+
+            >a {
+                color: $blueCyan;
+                font-weight: 700;
+            }
+        }
+
+        >button {
+            font-size: 1rem;
+        }
+
+        @include breakpoint-up(large) {
+            width: 100%;
+            position: fixed;
+            justify-content: center;
+
+            >p {
+                font-size: 15px;
+                width: 40%;
+            }
+
+            >button {
+                margin-left: 1.25rem;
+                padding: 0.75rem 1rem;
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &__newslater {
+
+        &__show {
+            bottom: 0  !important;
+        }
+
+        &__hide {
+            bottom: -400px !important;
+        }
+
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 10;
+        background-color: rgba(0, 123, 193, 0.9);
+        transition: all 400ms ease-in-out;
+
+        .container {
+            >h3 {
+                color: white;
+                line-height: 1.5;
+                font-size: 30px;
+            }
+
+            >p {
+                color: white;
+                font-size: 18px;
+                margin-bottom: 16px;
+            }
+        }
+
+        &__form {
+            padding-bottom: 20px;
+            input[type='email'] {
+                width: 100%;
+                padding: 8px 10px;
+                margin-bottom :12px;
+            }
+
+            button {
+                color: white;
+                background: $orange;
+                font-size: 16px;
+                width: 100%;
+                font-weight: 700;
+            }
+        }
+
+        >.close {
+            position: absolute;
+            top: 6px;
+            right: 12px;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+    }
+
+    @include breakpoint-up(large) {
+        &__newslater {
+            width: 47%;
+            height: 220px;
+
+            .container {
+                >h3 {
+                    line-height: 2;
+                }
+
+                >p {
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                }
+
+            }
+
+            &__form {
+                input[type='email'] {
+                    width: 75%;
+                    padding: 6px 10px;
+                }
+
+                button {
+                    font-size: 14px;
+                    width: 23%;
+                    font-weight: 700;
+                }
+            }
+
+            >.close {
+                position: absolute;
+                top: 6px;
+                right: 12px;
+                color: white;
+                font-size: 14px;
+                font-weight: 500;
+                cursor: pointer;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,11 @@
+footer {
+    background-color: $darkBlueFooter;
+    .container-fluid {
+        color: white;
+        > p {
+            font-size: 14px;
+            font-weight: 300;
+            padding: 42px;
+        }
+    }
+}

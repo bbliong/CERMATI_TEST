@@ -1,0 +1,96 @@
+.hero {
+
+    background-image: url("assets/images/bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    margin-top : 110px;
+    transition: all 400ms ease-in-out;
+
+    &.panel__notification__hide {
+        margin-top  : 0px;
+
+        &::after {
+          top : 0;
+        }
+    }
+    
+
+    &::after {
+        content: "";
+        position: absolute;
+        top : 110px;
+        height: 100vh;
+        width: 100%;
+        background-color: $darkBlue;
+        opacity: .7;
+        transition: all 400ms ease-in-out;
+    }
+
+    .container {
+        height: 100%;
+        z-index: 2;
+        position: relative;
+        color: white;
+
+        .hero__text {
+            text-align: center;
+            padding-top : 50px;
+            >h1 {
+                font-weight: 400;
+            }
+
+            >h2 {
+                font-weight: 700;
+                margin-bottom: 1.25rem;
+            }
+
+            >p {
+                font-size: 1.375rem;
+                margin-bottom : 1.875rem;
+            }
+
+            >button {
+                padding: 18px 26px;
+                background-color: transparent;
+                border: 2px solid $white;
+                color: white;
+                font-weight: 700;
+                font-size: 16px;
+
+                &:hover {
+                    background-color:  $white;
+                    color : $blue;
+                }
+            }
+
+            @include breakpoint-up(large) {
+                padding-top : 0px;
+                margin-top: 30px;
+
+                >h2 {
+                    font-weight: 700;
+                    margin-bottom: 0.75rem;
+                }
+    
+                >p {
+                    font-size: 1.25rem;
+                    margin-bottom : 1.875rem;
+                }
+
+            }
+        }
+    }
+
+    @include breakpoint-up(large) {
+        margin-top : 90px;
+        background-position: center bottom;
+        height: calc(100vh - 90px);
+
+        &::after {
+            top : 90px;
+            height: calc(100vh - 90px);
+        }
+    }
+}
